@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taste Your Scroll</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			min-width: 1000px;
+			min-height: 600px;
+			margin: 90px 0;
+			padding: 0;
+			text-align: center;
+			background-image: radial-gradient(ellipse closest-side at 50% 50%, #393e44, #36383b 25%, #343233);
+			font-family: Helvetica, Arial, sans-serif;
+		}
+
+		.page-title {
+			display: block;
+			margin: 0 0 60px;
+			padding: 0;
+			font-size: 38px;
+			color: #f9f9f9;
+		}
+	</style>
+	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="scrollbars.css">
+	<link rel="stylesheet" href="highlights.css">
+	<link rel="stylesheet" href="legend.css">
+</head>
+<body>
+
+	<h1 class="page-title">Custom Webkit ScrollBars</h1>
+
+	<fieldset class="fieldset">
+		<legend class="fieldset-legend">ScrollBar Colors Legend</legend>
+		<h2 class="fieldset-description">Hover over the names to highlight the pieces</h2>
+
+		<p class="fieldset-element" data-highlight-elements>
+			<span class="color" style="background-color: #ffffff;"></span>Element
+		</p>
+		<p class="fieldset-element" data-highlight-tracks>
+			<span class="color" style="background-color: #766e63;"></span>Track
+		</p>
+		<p class="fieldset-element" data-highlight-thumbs>
+			<span class="color" style="background-color: #ffc31f;"></span>Thumb
+		</p>
+		<p class="fieldset-element" data-highlight-increment-buttons>
+			<span class="color" style="background-color: #78af9f;"></span>Increment Buttons
+		</p>
+		<p class="fieldset-element" data-highlight-decrement-buttons>
+			<span class="color" style="background-color: #c13f21;"></span>Decrement Buttons
+		</p>
+		<p class="fieldset-element" data-highlight-corner>
+			<span class="color" style="background-color: #0f981a;"></span>Corner
+		</p>
+	</fieldset>
+
+	<div class="demo-stage">
+		<div class="demo">
+			<div class="content">
+				<h3>1) FAQ Question?</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+				<h3>2) FAQ Question?</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+				<h3>3) FAQ Question?</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+				<h3>4) FAQ Question?</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+			</div>
+		</div>
+
+		<div class="highlights">
+			<!-- Elements -->
+			<div class="highlight-part elements" data-elements>
+				<span class="element-vertical"></span>
+				<span class="element-horizontal"></span>
+			</div>
+
+			<!-- Tracks -->
+			<div class="highlight-part tracks" data-tracks>
+				<span class="track-vertical"></span>
+				<span class="track-horizontal"></span>
+			</div>
+
+			<!-- Thumbs -->
+			<div class="highlight-part thumbs" data-thumbs>
+				<span class="thumb-vertical"></span>
+				<span class="thumb-horizontal"></span>
+			</div>
+
+			<!-- Increment Buttons -->
+			<div class="highlight-part increment-vertical-buttons" data-increment-buttons>
+				<span class="increment-vertical-top"></span>
+				<span class="increment-vertical-bottom"></span>
+				<span class="increment-horizontal-left"></span>
+				<span class="increment-horizontal-right"></span>
+			</div>
+
+			<!-- Decrement Buttons -->
+			<div class="highlight-part decrement-vertical-buttons" data-decrement-buttons>
+				<span class="decrement-vertical-top"></span>
+				<span class="decrement-vertical-bottom"></span>
+				<span class="decrement-horizontal-left"></span>
+				<span class="decrement-horizontal-right"></span>
+			</div>
+
+			<!-- Corner -->
+			<div class="highlight-part corner" data-corner>
+				<span class="corner"></span>
+			</div>
+		</div>
+	</div>
+
+	<script src="highlight.js"></script>
+</body>
+</html>

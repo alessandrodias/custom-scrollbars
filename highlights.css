@@ -1,0 +1,130 @@
+.highlights {
+	width: 399px;
+	height: 399px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.highlight-part {
+	z-index: -1;
+}
+
+.highlight-part.is-highlighted {
+	z-index: 10;
+}
+
+.highlights span {
+	position: absolute;
+}
+
+.highlights span.is-highlighted {
+	background: #f0f;
+	box-shadow: 0 0 5px #f0f;
+}
+
+/* Elements */
+.element-vertical {
+	top: 0;
+	right: 0;
+	width: 15px;
+	height: 100%;
+}
+
+.element-horizontal {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 15px;
+}
+
+/* Tracks */
+.track-vertical {
+	top: 40px;
+	right: 0;
+	width: 15px;
+	height: calc(100% - 94px);
+}
+
+.track-horizontal {
+	bottom: 0;
+	left: 40px;
+	width: calc(100% - 94px);
+	height: 15px;
+}
+
+/* Thumbs */
+.thumb-vertical {
+	top: 40px;
+	right: 0;
+	width: 15px;
+	height: 217px;
+}
+
+.thumb-horizontal {
+	bottom: 0;
+	left: 40px;
+	width: 230px;
+	height: 15px;
+}
+
+/* Vertical Buttons */
+.increment-vertical-top,
+.increment-vertical-bottom,
+.decrement-vertical-top,
+.decrement-vertical-bottom {
+	right: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.increment-vertical-top {
+    top: 16px;
+}
+
+.increment-vertical-bottom {
+    bottom: 15px;
+}
+
+.decrement-vertical-top {
+    top: 0;
+}
+
+.decrement-vertical-bottom {
+    bottom: 30px;
+}
+
+/* Horizontal Buttons */
+.increment-horizontal-left,
+.increment-horizontal-right,
+.decrement-horizontal-left,
+.decrement-horizontal-right {
+	bottom: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.increment-horizontal-left {
+    left: 16px;
+}
+
+.increment-horizontal-right {
+    right: 15px;
+}
+
+.decrement-horizontal-left {
+    left: 0;
+}
+
+.decrement-horizontal-right {
+    right: 30px;
+}
+
+/* Corner */
+.corner {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 15px;
+	width: 15px;
+}

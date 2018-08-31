@@ -1,0 +1,46 @@
+.fieldset {
+	display: inline-block;
+	vertical-align: top;
+	height: 410px;
+	padding: 0 30px;
+	margin: -10px 50px 0;
+	text-align: left;
+    border: 1px solid #de7633;
+}
+
+.fieldset .fieldset-legend {
+	display: block;
+	padding: 0 20px;
+	text-align: center;
+	font-size: 20px;
+	color: #de7633;
+}
+
+.fieldset .fieldset-description {
+	display: block;
+	margin: 15px auto 20px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	color: #d4d3d0;
+	text-decoration: none;
+	font-style: italic;
+}
+
+.fieldset .fieldset-element {
+	display: block;
+	margin: 0;
+	padding: 15px 0;
+	font-size: 18px;
+    color: #efdab9;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fieldset .color {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin-right: 10px;
+}

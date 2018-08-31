@@ -1,0 +1,43 @@
+/* ScrollBar Element */
+.demo::-webkit-scrollbar {
+	width: 15px;  /* For Vertical Bar */
+	height: 15px; /* For Horizontal Bar */
+	background: #fff;
+}
+
+/* Track */
+.demo::-webkit-scrollbar-track {
+    border-radius: 10px;
+	margin: 10px;
+	background: #766e63;
+}
+
+/* Thumb */
+.demo::-webkit-scrollbar-thumb {
+	background: #ffc31f;
+	border-radius: 10px;
+}
+
+/* All Buttons (Down / Right / Up / Left) */
+.demo::-webkit-scrollbar-button {
+	position: absolute;
+}
+
+/* Down & Right Buttons */
+.demo::-webkit-scrollbar-button:increment {
+	width: 15px;  /* For Vertical Bar */
+	height: 15px; /* For Horizontal Bar */
+	background: #78af9f;
+}
+
+/* Up & Left Buttons */
+.demo::-webkit-scrollbar-button:decrement {
+	width: 15px;  /* For Vertical Bar */
+	height: 15px; /* For Horizontal Bar */
+	background: #c13f21;
+}
+
+/* The Corner */
+.demo::-webkit-scrollbar-corner {
+	background: #0f981a;
+}
