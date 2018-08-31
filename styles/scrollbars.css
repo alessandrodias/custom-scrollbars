@@ -1,43 +1,140 @@
-/* ScrollBar Element */
+/***********************
+ * ScrollBar Element
+ ***********************/
 .demo::-webkit-scrollbar {
-	width: 15px;  /* For Vertical Bar */
-	height: 15px; /* For Horizontal Bar */
+	width: 15px;
+	height: 15px;
 	background: #fff;
 }
 
-/* Track */
+.demo.highlight-elements::-webkit-scrollbar-track,
+.demo.highlight-elements::-webkit-scrollbar-thumb,
+.demo.highlight-elements::-webkit-scrollbar-button,
+.demo.highlight-elements::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+.demo.highlight-elements::-webkit-scrollbar {
+	background: #f0f;
+}
+
+
+
+/***********************
+ * Track
+ ***********************/
 .demo::-webkit-scrollbar-track {
+	width: 15px;
+	height: 15px;
     border-radius: 10px;
-	margin: 10px;
 	background: #766e63;
 }
 
-/* Thumb */
+.demo.highlight-tracks::-webkit-scrollbar,
+.demo.highlight-tracks::-webkit-scrollbar-thumb,
+.demo.highlight-tracks::-webkit-scrollbar-button,
+.demo.highlight-tracks::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+.demo.highlight-tracks::-webkit-scrollbar-track {
+	background: #f0f;
+	border-radius: 0;
+}
+
+
+
+/***********************
+ * Thumb
+ ***********************/
 .demo::-webkit-scrollbar-thumb {
 	background: #ffc31f;
 	border-radius: 10px;
 }
 
-/* All Buttons (Down / Right / Up / Left) */
+.demo.highlight-thumbs::-webkit-scrollbar,
+.demo.highlight-thumbs::-webkit-scrollbar-track,
+.demo.highlight-thumbs::-webkit-scrollbar-button,
+.demo.highlight-thumbs::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+.demo.highlight-thumbs::-webkit-scrollbar-thumb {
+	display: block !important;
+	background: #f0f;
+}
+
+
+
+/***********************
+ * Buttons
+ ***********************/
 .demo::-webkit-scrollbar-button {
 	position: absolute;
 }
 
-/* Down & Right Buttons */
+
+
+/***********************
+ * Increment Buttons
+ ***********************/
 .demo::-webkit-scrollbar-button:increment {
-	width: 15px;  /* For Vertical Bar */
-	height: 15px; /* For Horizontal Bar */
+	width: 15px;
+	height: 15px;
 	background: #78af9f;
 }
 
-/* Up & Left Buttons */
+.demo.highlight-increment-buttons::-webkit-scrollbar,
+.demo.highlight-increment-buttons::-webkit-scrollbar-track,
+.demo.highlight-increment-buttons::-webkit-scrollbar-thumb,
+.demo.highlight-increment-buttons::-webkit-scrollbar-button:decrement,
+.demo.highlight-increment-buttons::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+.demo.highlight-increment-buttons::-webkit-scrollbar-button:increment {
+	background: #f0f;
+}
+
+
+
+/***********************
+ * Decrement Buttons
+ ***********************/
 .demo::-webkit-scrollbar-button:decrement {
-	width: 15px;  /* For Vertical Bar */
-	height: 15px; /* For Horizontal Bar */
+	width: 15px;
+	height: 15px;
 	background: #c13f21;
 }
 
-/* The Corner */
+.demo.highlight-decrement-buttons::-webkit-scrollbar,
+.demo.highlight-decrement-buttons::-webkit-scrollbar-track,
+.demo.highlight-decrement-buttons::-webkit-scrollbar-thumb,
+.demo.highlight-decrement-buttons::-webkit-scrollbar-button:increment,
+.demo.highlight-decrement-buttons::-webkit-scrollbar-corner {
+	visibility: hidden;
+}
+
+.demo.highlight-decrement-buttons::-webkit-scrollbar-button:decrement {
+	background: #f0f;
+}
+
+
+
+/***********************
+ * Corner
+ ***********************/
 .demo::-webkit-scrollbar-corner {
 	background: #0f981a;
+}
+
+.demo.highlight-corner::-webkit-scrollbar,
+.demo.highlight-corner::-webkit-scrollbar-track,
+.demo.highlight-corner::-webkit-scrollbar-thumb,
+.demo.highlight-corner::-webkit-scrollbar-button {
+	visibility: hidden;
+}
+
+.demo.highlight-corner::-webkit-scrollbar-corner {
+	background: #f0f;
 }

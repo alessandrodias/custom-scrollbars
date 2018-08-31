@@ -27,20 +27,34 @@
 	font-style: italic;
 }
 
-.fieldset .fieldset-element {
+/* Label */
+.fieldset .fieldset-label {
+	position: relative;
 	display: block;
 	margin: 0;
-	padding: 15px 0;
+	padding: 15px 30px;
 	font-size: 18px;
     color: #efdab9;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.fieldset .color {
-	display: inline-block;
-	width: 15px;
-	height: 15px;
+.fieldset .fieldset-label input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.fieldset .fieldset-label .color {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 	margin-right: 10px;
 }
