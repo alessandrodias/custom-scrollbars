@@ -42,37 +42,37 @@
 			<h2 class="fieldset-description">Hover over the names to highlight the pieces</h2>
 
 			<label class="fieldset-label" for="input-element" data-highlight="elements">
-				<input id="input-element" type="color" v-model="elementsColor">
+				<input id="input-element" type="color" v-model="elementsColor" @change="onChangeColor('elements')">
 				<span class="color" :style="{ backgroundColor: elementsColor }"></span>
 				Element
 			</label>
 
 			<label class="fieldset-label" for="input-track" data-highlight="tracks">
-				<input id="input-track" type="color" v-model="tracksColor">
+				<input id="input-track" type="color" v-model="tracksColor" @change="onChangeColor('tracks')">
 				<span class="color" :style="{ backgroundColor: tracksColor }"></span>
 				Track
 			</label>
 
 			<label class="fieldset-label" for="input-track" data-highlight="thumbs">
-				<input id="input-track" type="color" v-model="thumbsColor">
+				<input id="input-track" type="color" v-model="thumbsColor" @change="onChangeColor('thumbs')">
 				<span class="color" :style="{ backgroundColor: thumbsColor }"></span>
 				Thumb
 			</label>
 
 			<label class="fieldset-label" for="input-track" data-highlight="increment-buttons">
-				<input id="input-track" type="color" v-model="incrementButtonsColor">
+				<input id="input-track" type="color" v-model="incrementButtonsColor" @change="onChangeColor('increment-buttons')">
 				<span class="color" :style="{ backgroundColor: incrementButtonsColor }"></span>
 				Increment Buttons
 			</label>
 
 			<label class="fieldset-label" for="input-track" data-highlight="decrement-buttons">
-				<input id="input-track" type="color" v-model="decrementButtonsColor">
+				<input id="input-track" type="color" v-model="decrementButtonsColor" @change="onChangeColor('decrement-buttons')">
 				<span class="color" :style="{ backgroundColor: decrementButtonsColor }"></span>
 				Decrement Buttons
 			</label>
 
 			<label class="fieldset-label" for="input-track" data-highlight="corner">
-				<input id="input-track" type="color" v-model="cornerColor">
+				<input id="input-track" type="color" v-model="cornerColor" @change="onChangeColor('corner')">
 				<span class="color" :style="{ backgroundColor: cornerColor }"></span>
 				Corner
 			</label>
@@ -105,6 +105,11 @@
 		    incrementButtonsColor: '#78af9f',
 		    decrementButtonsColor: '#c13f21',
 		    cornerColor: '#0f981a',
+		  },
+		  methods: {
+		  	onChangeColor(variable) {
+		  		document.documentElement.style.setProperty(`--${variable}-color`, event.currentTarget.value);
+		  	},
 		  }
 		});
 	</script>

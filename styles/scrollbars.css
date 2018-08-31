@@ -1,10 +1,19 @@
+:root {
+    --elements-color: #ffffff;
+    --tracks-color: #766e63;
+    --thumbs-color: #ffc31f;
+    --increment-buttons-color: #78af9f;
+    --decrement-buttons-color: #c13f21;
+    --corner-color: #0f981a;
+}
+
 /***********************
  * ScrollBar Element
  ***********************/
 .demo::-webkit-scrollbar {
 	width: 15px;
 	height: 15px;
-	background: #fff;
+	background: var(--elements-color);
 }
 
 .demo.highlight-elements::-webkit-scrollbar-track,
@@ -27,7 +36,7 @@
 	width: 15px;
 	height: 15px;
     border-radius: 10px;
-	background: #766e63;
+	background: var(--tracks-color);
 }
 
 .demo.highlight-tracks::-webkit-scrollbar,
@@ -48,8 +57,8 @@
  * Thumb
  ***********************/
 .demo::-webkit-scrollbar-thumb {
-	background: #ffc31f;
 	border-radius: 10px;
+	background: var(--thumbs-color);
 }
 
 .demo.highlight-thumbs::-webkit-scrollbar,
@@ -81,7 +90,7 @@
 .demo::-webkit-scrollbar-button:increment {
 	width: 15px;
 	height: 15px;
-	background: #78af9f;
+	background: var(--increment-buttons-color);
 }
 
 .demo.highlight-increment-buttons::-webkit-scrollbar,
@@ -104,7 +113,7 @@
 .demo::-webkit-scrollbar-button:decrement {
 	width: 15px;
 	height: 15px;
-	background: #c13f21;
+	background: var(--decrement-buttons-color);
 }
 
 .demo.highlight-decrement-buttons::-webkit-scrollbar,
@@ -125,7 +134,7 @@
  * Corner
  ***********************/
 .demo::-webkit-scrollbar-corner {
-	background: #0f981a;
+	background: var(--corner-color);
 }
 
 .demo.highlight-corner::-webkit-scrollbar,
