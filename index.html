@@ -4,115 +4,219 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Taste Your Scroll</title>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-
-		body {
-			min-width: 1000px;
-			min-height: 600px;
-			margin: 90px 0;
-			padding: 0;
-			text-align: center;
-			background-image: radial-gradient(ellipse closest-side at 50% 50%, #393e44, #36383b 25%, #343233);
-			font-family: Helvetica, Arial, sans-serif;
-		}
-
-		.page-title {
-			display: block;
-			margin: 0 0 60px;
-			padding: 0;
-			font-size: 38px;
-			color: #f9f9f9;
-		}
-	</style>
-	<link rel="stylesheet" href="styles/demo.css">
-	<link rel="stylesheet" href="styles/scrollbars.css">
-	<link rel="stylesheet" href="styles/highlights.css">
-	<link rel="stylesheet" href="styles/legend.css">
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<!-- <link rel="stylesheet" href="styles/demo.css"> -->
+	<!-- <link rel="stylesheet" href="styles/scrollbars.css"> -->
+	<!-- <link rel="stylesheet" href="styles/highlights.css"> -->
+	<!-- <link rel="stylesheet" href="styles/legend.css"> -->
 </head>
 <body>
 
-	<h1 class="page-title">Custom Webkit ScrollBars</h1>
+	<div id="app" class="app-holder">
+		<h1 class="page-title">Custom Webkit ScrollBars</h1>
 
-	<div id="app">
-		<fieldset class="fieldset">
-			<legend class="fieldset-legend">ScrollBar Customization</legend>
-			<h2 class="fieldset-description">Click on the names to change color of the pieces</h2>
+		<div class="configurations-panel">
 
-			<label class="fieldset-label" for="input-element" data-highlight="elements">
-				<input id="input-element" type="color" v-model="elementsColor" @change="onChangeColor('elements')">
-				<span class="color" :style="{ backgroundColor: elementsColor }"></span>
-				Element
-			</label>
+			<fieldset class="configs" data-highlight="element">
+				<legend>Base Element</legend>
 
-			<label class="fieldset-label" for="input-track" data-highlight="tracks">
-				<input id="input-track" type="color" v-model="tracksColor" @change="onChangeColor('tracks')">
-				<span class="color" :style="{ backgroundColor: tracksColor }"></span>
-				Track
-			</label>
+				<div class="field">
+					<label for="element-width">Vertical Bar Width <small>(px)</small></label>
+					<input type="tel" id="element-width" v-model="scrollbarWidth" @keyup="onChangeSize('width')">
+				</div>
+				<div class="field">
+					<label for="element-height">Horizontal Bar Height <small>(px)</small></label>
+					<input type="tel" id="element-height" v-model="scrollbarHeight" @keyup="onChangeSize('height')">
+				</div>
+			</fieldset>
 
-			<label class="fieldset-label" for="input-track" data-highlight="thumbs">
-				<input id="input-track" type="color" v-model="thumbsColor" @change="onChangeColor('thumbs')">
-				<span class="color" :style="{ backgroundColor: thumbsColor }"></span>
-				Thumb
-			</label>
+			<fieldset class="configs" data-highlight="track">
+				<legend>Track</legend>
 
-			<label class="fieldset-label" for="input-track" data-highlight="increment-buttons">
-				<input id="input-track" type="color" v-model="incrementButtonsColor" @change="onChangeColor('increment-buttons')">
-				<span class="color" :style="{ backgroundColor: incrementButtonsColor }"></span>
-				Increment Buttons
-			</label>
+				<div class="field">
+					<label for="track-background">Background Color</label>
+					<input type="color" id="track-background" v-model="trackBg" @change="onChangeColor('track')">
+					<span class="color-placeholder" :style="{ backgroundColor: trackBg }"></span>
+				</div>
+			</fieldset>
 
-			<label class="fieldset-label" for="input-track" data-highlight="decrement-buttons">
-				<input id="input-track" type="color" v-model="decrementButtonsColor" @change="onChangeColor('decrement-buttons')">
-				<span class="color" :style="{ backgroundColor: decrementButtonsColor }"></span>
-				Decrement Buttons
-			</label>
+			<fieldset class="configs" data-highlight="track">
+				<legend>Thumb</legend>
 
-			<label class="fieldset-label" for="input-track" data-highlight="corner">
-				<input id="input-track" type="color" v-model="cornerColor" @change="onChangeColor('corner')">
-				<span class="color" :style="{ backgroundColor: cornerColor }"></span>
-				Corner
-			</label>
-		</fieldset>
+				<div class="field">
+					<label for="thumb-background">Background Color</label>
+					<input type="color" id="thumb-background" v-model="thumbBg" @change="onChangeColor('thumb')">
+					<span class="color-placeholder" :style="{ backgroundColor: thumbBg }"></span>
+				</div>
 
-		<div class="demo-stage">
-			<div class="demo" data-holder>
-				<div class="content">
-					<h3>1) FAQ Question?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
-					<h3>2) FAQ Question?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
-					<h3>3) FAQ Question?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
-					<h3>4) FAQ Question?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+				<div class="field">
+					<label for="element-height">Border Radius <small>(px)</small></label>
+					<input type="tel" id="element-height" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius">
+				</div>
+			</fieldset>
+
+			<fieldset class="configs" data-highlight="track">
+				<legend>Corner</legend>
+
+				<div class="field">
+					<label for="corner-visible">Show Corner</label>
+					<input type="checkbox" id="corner-visible" :value="true" v-model="cornerVisibilityValue" @change="onChangeVisibility('corner')">
+				</div>
+
+				<div class="field" v-show="cornerVisibilityValue">
+					<label for="corner-background">Background Color</label>
+					<input type="color" id="corner-background" v-model="cornerBg" @change="onChangeColor('corner')">
+					<span class="color-placeholder" :style="{ backgroundColor: cornerBg }"></span>
+				</div>
+			</fieldset>
+
+			<button class="btn-generate" @click="toggleModal">Generate Code</button>
+
+		</div>
+
+		<div class="stage">
+			<div class="stage-content">
+				<div class="stage-item">
+					<h2>1) FAQ Question?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
+				</div>
+				<div class="stage-item">
+					<h2>1) FAQ Question?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
+				</div>
+				<div class="stage-item">
+					<h2>1) FAQ Question?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
+				</div>
+				<div class="stage-item">
+					<h2>1) FAQ Question?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
+				</div>
+				<div class="stage-item">
+					<h2>1) FAQ Question?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<div class="modal" v-show="modalVisible" v-cloak>
+			<div class="modal-overlay" @click="toggleModal"></div>
+			<div class="modal-body">
+				<span class="modal-close" @click="toggleModal">x</span>
+				<p class="modal-instructions">
+					Click once to select the whole code, and change<br/> 'element' by the class name you want
+				</p>
+
+				<div class="code">
+
+					<!-- Base Element -->
+					<div class="code-block">
+						<div class="code-line">
+							<span class="class">element::-webkit-scrollbar</span> {
+						</div>
+						<div class="code-line">
+							<span class="property">  width:</span> <span class="value">{{ scrollbarWidth }}px;</span>
+						</div>
+						<div class="code-line">
+							<span class="property">  height:</span> <span class="value">{{ scrollbarHeight }}px;</span>
+						</div>
+						<div class="code-line">
+							}
+						</div>
+					</div>
+
+					<!-- Track -->
+					<div class="code-block">
+						<div class="code-line">
+							<span class="class">element::-webkit-scrollbar-track</span> {
+						</div>
+						<div class="code-line">
+							<span class="property">  background-color:</span> <span class="value">{{ trackBg }};</span>
+						</div>
+						<div class="code-line">
+							<span class="property">  border-radius:</span> <span class="value">{{ thumbBorderRadius }}px;</span>
+						</div>
+						<div class="code-line">
+							}
+						</div>
+					</div>
+
+					<!-- Thumb -->
+					<div class="code-block">
+						<div class="code-line">
+							<span class="class">element::-webkit-scrollbar-thumb</span> {
+						</div>
+						<div class="code-line">
+							<span class="property">  background-color:</span> <span class="value">{{ thumbBg }};</span>
+						</div>
+						<div class="code-line">
+							<span class="property">  border-radius:</span> <span class="value">{{ thumbBorderRadius }}px;</span>
+						</div>
+						<div class="code-line">
+							}
+						</div>
+					</div>
+
+					<!-- Corner -->
+					<div class="code-block">
+						<div class="code-line">
+							<span class="class">element::-webkit-scrollbar-corner</span> {
+						</div>
+						<div class="code-line">
+							<span class="property">  background-color:</span> <span class="value">{{ cornerBg }};</span>
+						</div>
+						<div class="code-line" v-show="cornerVisibilityValue">
+							<span class="property">  visibility:</span> <span class="value">{{ cornerVisibility }};</span>
+						</div>
+						<div class="code-line">
+							}
+						</div>
+					</div>
+
+				</div><!-- /code -->
+
+			</div><!-- /modal-body -->
+		</div><!-- /modal -->
+
+	</div><!-- /app -->
 
 	<script src="scripts/vendor/vue.js"></script>
 	<script>
 		var app = new Vue({
 		  el: '#app',
 		  data: {
-		    elementsColor: '#ffffff',
-		    tracksColor: '#766e63',
-		    thumbsColor: '#ffc31f',
-		    incrementButtonsColor: '#78af9f',
-		    decrementButtonsColor: '#c13f21',
-		    cornerColor: '#0f981a',
+		  	scrollbarWidth: '10',
+		  	scrollbarHeight: '10',
+		    trackBg: '#766e63',
+		    thumbBg: '#ffc31f',
+		    thumbBorderRadius: 0,
+		    cornerVisibilityValue: true,
+		    cornerVisibility: 'visible',
+		    cornerBg: '#0f981a',
+		    modalVisible: false,
 		  },
 		  methods: {
-		  	onChangeColor(variable) {
-		  		document.documentElement.style.setProperty(`--${variable}-color`, event.currentTarget.value);
+		  	onChangeSize(element) {
+		  		document.documentElement.style.setProperty(`--scrollbar-${element}`, event.currentTarget.value + 'px');
+		  	},
+		  	onChangeColor(element) {
+		  		document.documentElement.style.setProperty(`--${element}-bg`, event.currentTarget.value);
+		  	},
+		  	onChangeBorderRadius() {
+		  		if (this.thumbBorderRadius) {
+		  			document.documentElement.style.setProperty(`--thumb-border-radius`, event.currentTarget.value + 'px');
+		  		}
+		  	},
+		  	onChangeVisibility(element) {
+		  		this.cornerVisibility = (this.cornerVisibilityValue) ? 'visible' : 'hidden';
+		  		document.documentElement.style.setProperty(`--${element}-visibility`, this.cornerVisibility);
+		  	},
+		  	toggleModal() {
+		  		this.modalVisible = !this.modalVisible;
 		  	},
 		  }
 		});
 	</script>
-	<script src="scripts/highlight.js"></script>
+
 </body>
 </html>

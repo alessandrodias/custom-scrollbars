@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taste Your Scroll</title>
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<!-- <link rel="stylesheet" href="styles/demo.css"> -->
+	<!-- <link rel="stylesheet" href="styles/scrollbars.css"> -->
+	<!-- <link rel="stylesheet" href="styles/highlights.css"> -->
+	<!-- <link rel="stylesheet" href="styles/legend.css"> -->
+</head>
+<body>
+
+	<h1 class="page-title">Custom Webkit ScrollBars</h1>
+
+	<div id="app">
+		<fieldset class="fieldset">
+			<legend class="fieldset-legend">ScrollBar Customization</legend>
+			<h2 class="fieldset-description">Click on the names to change color of the pieces</h2>
+
+			<label class="fieldset-label" for="input-element" data-highlight="elements">
+				<input id="input-element" type="color" v-model="elementsColor" @change="onChangeColor('elements')">
+				<span class="color" :style="{ backgroundColor: elementsColor }"></span>
+				Element
+			</label>
+
+			<label class="fieldset-label" for="input-track" data-highlight="tracks">
+				<input id="input-track" type="color" v-model="tracksColor" @change="onChangeColor('tracks')">
+				<span class="color" :style="{ backgroundColor: tracksColor }"></span>
+				Track
+			</label>
+
+			<label class="fieldset-label" for="input-track" data-highlight="thumbs">
+				<input id="input-track" type="color" v-model="thumbsColor" @change="onChangeColor('thumbs')">
+				<span class="color" :style="{ backgroundColor: thumbsColor }"></span>
+				Thumb
+			</label>
+
+			<label class="fieldset-label" for="input-track" data-highlight="increment-buttons">
+				<input id="input-track" type="color" v-model="incrementButtonsColor" @change="onChangeColor('increment-buttons')">
+				<span class="color" :style="{ backgroundColor: incrementButtonsColor }"></span>
+				Increment Buttons
+			</label>
+
+			<label class="fieldset-label" for="input-track" data-highlight="decrement-buttons">
+				<input id="input-track" type="color" v-model="decrementButtonsColor" @change="onChangeColor('decrement-buttons')">
+				<span class="color" :style="{ backgroundColor: decrementButtonsColor }"></span>
+				Decrement Buttons
+			</label>
+
+			<label class="fieldset-label" for="input-track" data-highlight="corner">
+				<input id="input-track" type="color" v-model="cornerColor" @change="onChangeColor('corner')">
+				<span class="color" :style="{ backgroundColor: cornerColor }"></span>
+				Corner
+			</label>
+		</fieldset>
+
+		<div class="demo-stage">
+			<div class="demo" data-holder>
+				<div class="content">
+					<h3>1) FAQ Question?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+					<h3>2) FAQ Question?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+					<h3>3) FAQ Question?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+					<h3>4) FAQ Question?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, quidem non, eius quae laboriosam eum omnis id facere architecto beatae quo culpa possimus excepturi dolorem suscipit sed esse delectus minus.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts/vendor/vue.js"></script>
+	<script>
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		    elementsColor: '#ffffff',
+		    tracksColor: '#766e63',
+		    thumbsColor: '#ffc31f',
+		    incrementButtonsColor: '#78af9f',
+		    decrementButtonsColor: '#c13f21',
+		    cornerColor: '#0f981a',
+		  },
+		  methods: {
+		  	onChangeColor(variable) {
+		  		document.documentElement.style.setProperty(`--${variable}-color`, event.currentTarget.value);
+		  	},
+		  }
+		});
+	</script>
+	<script src="scripts/highlight.js"></script>
+</body>
+</html>
