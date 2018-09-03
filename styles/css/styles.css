@@ -239,6 +239,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: #b2ccd6;
+  box-shadow: 0 0 10px 1px #272822;
   user-select: all;
 }
 .modal-body .code .code-block {
