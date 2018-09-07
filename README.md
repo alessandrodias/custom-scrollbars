@@ -1,9 +1,9 @@
-# Taste Your ScrollBars
+# Taste Your Scroll
 
 This tool is intended to help you customize the scroll bars of your project.
 
 Demonstration here:
-https://alessandrodias.github.io/taste-your-scrollbars/
+https://alessandrodias.github.io/taste-your-scroll
 
 ## About the project
 
