@@ -27,11 +27,11 @@
 
 				<div class="field">
 					<label for="element-width">Vertical Bar Width <small>(px)</small></label>
-					<input type="tel" id="element-width" v-model="scrollbarWidth" @keyup="onChangeSize('width')">
+					<input type="tel" id="element-width" v-model="scrollbarWidth" @keyup="onChangeSize('width', $event)">
 				</div>
 				<div class="field">
 					<label for="element-height">Horizontal Bar Height <small>(px)</small></label>
-					<input type="tel" id="element-height" v-model="scrollbarHeight" @keyup="onChangeSize('height')">
+					<input type="tel" id="element-height" v-model="scrollbarHeight" @keyup="onChangeSize('height', $event)">
 				</div>
 			</fieldset>
 
@@ -40,7 +40,7 @@
 
 				<div class="field">
 					<label for="track-background">Background Color</label>
-					<input type="color" id="track-background" v-model="trackBg" @change="onChangeColor('track')">
+					<input type="color" id="track-background" v-model="trackBg" @change="onChangeColor('track', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: trackBg }"></span>
 				</div>
 			</fieldset>
@@ -50,13 +50,13 @@
 
 				<div class="field">
 					<label for="thumb-background">Background Color</label>
-					<input type="color" id="thumb-background" v-model="thumbBg" @change="onChangeColor('thumb')">
+					<input type="color" id="thumb-background" v-model="thumbBg" @change="onChangeColor('thumb', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: thumbBg }"></span>
 				</div>
 
 				<div class="field">
 					<label for="element-height">Border Radius <small>(px)</small></label>
-					<input type="tel" id="element-height" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius">
+					<input type="tel" id="element-height" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius($event)">
 				</div>
 			</fieldset>
 
@@ -70,7 +70,7 @@
 
 				<div class="field" v-show="cornerVisibilityValue">
 					<label for="corner-background">Background Color</label>
-					<input type="color" id="corner-background" v-model="cornerBg" @change="onChangeColor('corner')">
+					<input type="color" id="corner-background" v-model="cornerBg" @change="onChangeColor('corner', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: cornerBg }"></span>
 				</div>
 			</fieldset>
@@ -183,7 +183,7 @@
 
 	</div><!-- /app -->
 
-	<script src="scripts/vendor/vue.js"></script>
+	<script src="scripts/vendor/vue.min.js"></script>
 	<script>
 		var app = new Vue({
 		  el: '#app',
@@ -199,13 +199,13 @@
 		    modalVisible: false,
 		  },
 		  methods: {
-		  	onChangeSize(element) {
+		  	onChangeSize(element, event) {
 		  		document.documentElement.style.setProperty(`--scrollbar-${element}`, event.currentTarget.value + 'px');
 		  	},
-		  	onChangeColor(element) {
+		  	onChangeColor(element, event) {
 		  		document.documentElement.style.setProperty(`--${element}-bg`, event.currentTarget.value);
 		  	},
-		  	onChangeBorderRadius() {
+		  	onChangeBorderRadius(event) {
 		  		if (this.thumbBorderRadius) {
 		  			document.documentElement.style.setProperty(`--thumb-border-radius`, event.currentTarget.value + 'px');
 		  		}
