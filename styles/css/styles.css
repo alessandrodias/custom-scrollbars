@@ -238,6 +238,7 @@ body {
   background: #272822;
   font-size: 18px;
   line-height: 1.5;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   color: #b2ccd6;
   box-shadow: 0 0 10px 1px #272822;
   user-select: all;
@@ -254,6 +255,7 @@ body {
 }
 .modal-body .code .property {
   color: #b2ccd6;
+  padding-left: 5px;
   white-space: pre;
 }
 .modal-body .code .value {
