@@ -27,11 +27,11 @@
 
 				<div class="field">
 					<label for="element-width">Vertical Bar Width <small>(px)</small></label>
-					<input type="number" id="element-width" class="field-input" v-model="scrollbarWidth" @keyup="onChangeSize('width', $event)">
+					<input type="number" id="element-width" class="field-input" min="0" step="1" v-model="scrollbarWidth" @keyup="onChangeSize('width', $event)">
 				</div>
 				<div class="field">
 					<label for="element-height">Horizontal Bar Height <small>(px)</small></label>
-					<input type="number" id="element-height" class="field-input" v-model="scrollbarHeight" @keyup="onChangeSize('height', $event)">
+					<input type="number" id="element-height" class="field-input" min="0" step="1" v-model="scrollbarHeight" @keyup="onChangeSize('height', $event)">
 				</div>
 			</fieldset>
 
@@ -56,7 +56,7 @@
 
 				<div class="field">
 					<label for="element-height">Border Radius <small>(px)</small></label>
-					<input type="number" id="element-height" class="field-input" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius($event)">
+					<input type="number" id="element-height" class="field-input" min="0" step="1" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius($event)">
 				</div>
 			</fieldset>
 
