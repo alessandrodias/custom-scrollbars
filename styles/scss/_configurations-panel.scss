@@ -41,7 +41,7 @@
     color: $muted-color;
   }
 
-  input[type="tel"] {
+  .field-input {
     display: inline-block;
     vertical-align: middle;
     height: 30px;
@@ -50,7 +50,7 @@
     text-align: center;
   }
 
-  input[type="color"] {
+  .field-color {
     position: absolute;
     top: 0;
     right: 0;

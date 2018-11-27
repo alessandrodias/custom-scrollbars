@@ -27,11 +27,11 @@
 
 				<div class="field">
 					<label for="element-width">Vertical Bar Width <small>(px)</small></label>
-					<input type="tel" id="element-width" v-model="scrollbarWidth" @keyup="onChangeSize('width', $event)">
+					<input type="number" id="element-width" class="field-input" v-model="scrollbarWidth" @keyup="onChangeSize('width', $event)">
 				</div>
 				<div class="field">
 					<label for="element-height">Horizontal Bar Height <small>(px)</small></label>
-					<input type="tel" id="element-height" v-model="scrollbarHeight" @keyup="onChangeSize('height', $event)">
+					<input type="number" id="element-height" class="field-input" v-model="scrollbarHeight" @keyup="onChangeSize('height', $event)">
 				</div>
 			</fieldset>
 
@@ -40,7 +40,7 @@
 
 				<div class="field">
 					<label for="track-background">Background Color</label>
-					<input type="color" id="track-background" v-model="trackBg" @change="onChangeColor('track', $event)">
+					<input type="color" id="track-background" class="field-color" v-model="trackBg" @change="onChangeColor('track', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: trackBg }"></span>
 				</div>
 			</fieldset>
@@ -50,13 +50,13 @@
 
 				<div class="field">
 					<label for="thumb-background">Background Color</label>
-					<input type="color" id="thumb-background" v-model="thumbBg" @change="onChangeColor('thumb', $event)">
+					<input type="color" id="thumb-background" class="field-color" v-model="thumbBg" @change="onChangeColor('thumb', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: thumbBg }"></span>
 				</div>
 
 				<div class="field">
 					<label for="element-height">Border Radius <small>(px)</small></label>
-					<input type="tel" id="element-height" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius($event)">
+					<input type="number" id="element-height" class="field-input" v-model="thumbBorderRadius" @keyup="onChangeBorderRadius($event)">
 				</div>
 			</fieldset>
 
@@ -70,35 +70,35 @@
 
 				<div class="field" v-show="cornerVisibilityValue">
 					<label for="corner-background">Background Color</label>
-					<input type="color" id="corner-background" v-model="cornerBg" @change="onChangeColor('corner', $event)">
+					<input type="color" id="corner-background" class="field-color" v-model="cornerBg" @change="onChangeColor('corner', $event)">
 					<span class="color-placeholder" :style="{ backgroundColor: cornerBg }"></span>
 				</div>
 			</fieldset>
 
 			<button class="btn-generate" @click="toggleModal">Generate Code</button>
-
 		</div>
 
 		<div class="stage">
 			<div class="stage-content">
+				<h3 class="stage-title">Demo for custom scroll bars</h3>
 				<div class="stage-item">
-					<h2>1) FAQ Question?</h2>
+					<h3>1) FAQ Question?</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 				<div class="stage-item">
-					<h2>2) FAQ Question?</h2>
+					<h3>2) FAQ Question?</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 				<div class="stage-item">
-					<h2>3) FAQ Question?</h2>
+					<h3>3) FAQ Question?</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 				<div class="stage-item">
-					<h2>4) FAQ Question?</h2>
+					<h3>4) FAQ Question?</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 				<div class="stage-item">
-					<h2>5) FAQ Question?</h2>
+					<h3>5) FAQ Question?</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, placeat! Minima, laboriosam, nostrum. Quod, unde! Dolores harum, modi laudantium sapiente a eligendi, temporibus, consequuntur reiciendis voluptates tenetur saepe consectetur culpa.</p>
 				</div>
 			</div>
@@ -221,5 +221,13 @@
 		});
 	</script>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129905030-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-129905030-1');
+	</script>
 </body>
 </html>

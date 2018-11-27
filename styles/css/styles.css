@@ -36,8 +36,8 @@ body {
   margin: 0 auto 20px;
   padding: 10px;
   font-size: 38px;
-  color: #a28741;
-  border-bottom: 1px solid #a28741;
+  color: #eabf4e;
+  border-bottom: 1px solid #eabf4e;
 }
 
 .configurations-panel {
@@ -51,17 +51,17 @@ body {
   display: block;
   margin: 0 0 15px;
   padding: 20px;
-  border: 1px solid #a28741;
+  border: 1px solid #eabf4e;
   transition: 150ms all ease-out;
 }
 .configs:hover {
-  box-shadow: 0 0 5px 1px #bda159;
+  box-shadow: 0 0 5px 1px #efcf7c;
 }
 .configs legend {
   display: block;
   padding: 0 15px;
   font-size: 14px;
-  color: #a28741;
+  color: #eabf4e;
   background: #1e2233;
 }
 
@@ -77,9 +77,9 @@ body {
   display: inline-block;
   vertical-align: middle;
   width: 200px;
-  color: #a7a4a2;
+  color: #d4cfcc;
 }
-.field input[type=tel] {
+.field .field-input {
   display: inline-block;
   vertical-align: middle;
   height: 30px;
@@ -87,7 +87,7 @@ body {
   font-size: 18px;
   text-align: center;
 }
-.field input[type=color] {
+.field .field-color {
   position: absolute;
   top: 0;
   right: 0;
@@ -120,7 +120,7 @@ body {
   width: 170px;
   font-size: 14px;
   font-weight: bold;
-  color: #a7a4a2;
+  color: #d4cfcc;
   outline: 0;
   cursor: pointer;
   text-transform: uppercase;
@@ -172,6 +172,22 @@ body {
   width: 600px;
   padding: 20px;
   color: #404040;
+}
+.stage-content .stage-title {
+  font-size: 26px;
+  text-align: center;
+  margin: 0 0 25px;
+}
+.stage-content .stage-item {
+  margin-bottom: 25px;
+}
+.stage-content h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+.stage-content p {
+  font-size: 16px;
+  margin: 0 0 10px;
 }
 
 .modal {
