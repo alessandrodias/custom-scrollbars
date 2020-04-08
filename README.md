@@ -1,18 +1,13 @@
-# Taste Your Scroll
+# Custom Scrollbars
 
-This tool is intended to help you customize the scroll bars of your project.
+This tool is intended to help you customize the scrollbars of your next project.
 
-Demonstration here:
-https://alessandrodias.github.io/taste-your-scroll
+Demonstration here 👉 https://alessandrodias.github.io/custom-scrollbars
 
 ## About the project
 
-This project is using [SASS](https://sass-lang.com/) to compile css code and [Vue.js](https://vuejs.org/) for dynamically previewing changes and generating the final code.
+This project is using [Vue.js](https://vuejs.org/) for dynamically previewing changes and generating the final code.
 
-### How to compile SASS
+### Credits
 
-Run `sass --watch scss:css` inside styles folder.
-
-#### Credits
-
-Made with ❤️ by  [Alessandro Dias](https://github.com/alessandrodias/)
+Made with ❤️ by [Alessandro Dias](https://github.com/alessandrodias/)

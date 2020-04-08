@@ -1,0 +1,348 @@
+/******************************
+ * Defaults & Root
+ ******************************/
+[v-cloak] {
+display: none;
+}
+
+:root {
+  --scrollbar-width: 10px;
+  --scrollbar-height: 10px;
+  --thumb-border-radius: 0;
+  --track-bg: #766e63;
+  --thumb-bg: #ffc31f;
+  --corner-bg: #f00;
+  --corner-visibility: "visible";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-color: #eeeeee;
+}
+
+.github-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.app-holder {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  max-width: 960px;
+  height: 75%;
+  max-height: 500px;
+  padding: 20px;
+  background: #1e2233;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 4px #a9a9a9;
+  z-index: 1;
+  font-size: 0;
+}
+
+.app-title {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 350px;
+  padding: 10px;
+  font-size: 36px;
+  text-align: center;
+  color: #eabf4e;
+  border-bottom: 1px solid #eabf4e;
+}
+
+/******************************
+ * Configurations
+ ******************************/
+.configurations {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  text-align: left;
+}
+
+.panel {
+  padding: 20px;
+  border: 1px solid #eabf4e;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  border: 1px solid #3d3d3d;
+}
+
+.field.-inactive {
+  opacity: 0.4;
+  pointer-events: none;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field-label {
+  flex: 3;
+  font-size: 16px;
+  color: #f1f1f1;
+}
+
+.field-input {
+  flex: 4;
+  margin: 0 10px;
+}
+
+.field-value {
+  flex: 1;
+  font-size: 14px;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.-color-preview {
+  height: 15px;
+  border: 1px solid #fff;
+}
+
+/******************************
+ * Preview
+ ******************************/
+.preview {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(50% - 20px);
+  max-height: 380px;
+  margin-left: 20px;
+  background: #2b3a42;
+  overflow: auto;
+}
+
+.preview-content {
+  display: block;
+  padding: 20px;
+  width: 600px;
+  color: #f1f1f1;
+}
+
+.preview-title {
+  display: block;
+  font-size: 24px;
+  color: inherit;
+  margin: 0 0 30px;
+}
+
+.preview-text {
+  display: block;
+  font-size: 16px;
+  color: inherit;
+  margin: 0 0 30px;
+}
+
+.preview::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-height);
+}
+
+.preview::-webkit-scrollbar-track {
+  background-color: var(--track-bg);
+  border-radius: var(--thumb-border-radius);
+}
+
+.preview::-webkit-scrollbar-thumb {
+  background-color: var(--thumb-bg);
+  border-radius: var(--thumb-border-radius);
+}
+
+.preview::-webkit-scrollbar-corner {
+  visibility: var(--corner-visibility);
+  background-color: var(--corner-bg);
+}
+
+/******************************
+ * Button to generate
+ ******************************/
+.btn-generate {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #fbc31f;
+  border: 1px solid #fbc31f;
+  border-radius: 50px;
+  width: 170px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1e2233;
+  outline: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 300ms all ease;
+}
+
+/******************************
+ * Modal
+ ******************************/
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #efeae1;
+  z-index: 1;
+}
+
+.modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.modal-title {
+  position: relative;
+  display: block;
+  margin: 4vw auto 30px;
+  color: #1e2233;
+  font-size: 40px;
+  line-height: 1.5;
+  text-align: center;
+  z-index: 2;
+}
+
+.modal-title span {
+  font-style: italic;
+  color: #f07178;
+  margin-right: 5px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: #f9f9f9;
+  z-index: 10;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.modal .code {
+  position: relative;
+  display: block;
+  padding: 20px;
+  background: #272822;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  color: #b2ccd6;
+  box-shadow: 0 0 10px 1px #272822;
+  user-select: all;
+}
+
+.modal-body .code .code-block {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.modal-body .code .code-line {
+  display: block;
+}
+
+.modal-body .code .class {
+  color: #f07178;
+}
+
+.modal-body .code .property {
+  color: #b2ccd6;
+  padding-left: 5px;
+  white-space: pre;
+}
+
+.modal-body .code .value {
+  color: #f78c6c;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+@media screen and ( max-width: 900px ) {
+  body {
+    height: auto;
+  }
+
+  .app-holder {
+    position: static;
+    width: 100vw;
+    height: auto;
+    max-height: none;
+    transform: none;
+    padding: 20px 10px 10px;
+    border-radius: 0;
+  }
+
+  .app-title {
+    font-size: 28px;
+    padding-top: 0;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  .configurations,
+  .preview {
+    display: block;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .modal-body {
+    width: 90%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+
+  .modal-title {
+    font-size: 25px;
+  }
+}
